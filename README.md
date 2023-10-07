@@ -23,12 +23,19 @@ The Kotlin ProGuard Configuration Generator is a sophisticated module designed t
 - __Custom Rules:__ The module empowers developers to define custom ProGuard rules, accommodating unique application requirements and maintaining compatibility with third-party libraries.
 
 #### Getting Started
-import this 2 process inside your gradle 
+import this 2 process inside your app gradle 
 ```gradle
 
-    implementation project(':module-annotations')
-    implementation project(':module-processes')
-    kapt project(':module-processes')
+implementation project(':module-annotations')
+implementation project(':module-processes')
+kapt project(':module-processes')
+
+```
+and inside your settings.gradle
+```gradle
+
+include ':module-annotations'
+include ':module-processes'
 
 ```
 
@@ -36,7 +43,7 @@ remember to add the kapt command before because In a Gradle Android project that
 
 ```gradle
 
-    apply plugin: "kotlin-kapt"
+apply plugin: "kotlin-kapt"
 
 ```
 
